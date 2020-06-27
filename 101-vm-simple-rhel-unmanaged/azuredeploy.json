@@ -108,7 +108,8 @@
               "sourceAddressPrefix": "*",
               "sourcePortRange": "*",
               "destinationAddressPrefix": "*"
-            },
+            }
+          },
             {
             "name": "default-allow-8080",
             "properties": {
@@ -121,7 +122,6 @@
               "sourcePortRange": "*",
               "destinationAddressPrefix": "*"
             }
-          }
           }
         ]
       }
