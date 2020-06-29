@@ -192,7 +192,8 @@
             "name": "[concat(parameters('vmName'),'_OSDisk')]",
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          },
+          }
+        },
         "networkProfile": {
           "networkInterfaces": [
             {
