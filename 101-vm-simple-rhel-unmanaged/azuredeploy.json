@@ -40,9 +40,6 @@
     }
   },
   "variables": {
-    "storageAccountName": "[concat(uniquestring(parameters('vmName')), 'storage')]",
-    "dataDisk1VhdName": "[concat(uniquestring(parameters('vmName')), 'datadisk1')]",
-    "dataDisk2VhdName": "[concat(uniquestring(parameters('vmName')), 'datadisk2')]",
     "imagePublisher": "RedHat",
     "imageOffer": "RHEL",
     "OSDiskName": "[concat(uniquestring(parameters('vmName')), 'osdisk')]",
@@ -71,15 +68,6 @@
     "networkSecurityGroupName": "[concat(variables('subnetName'), '-nsg')]"
   },
   "resources": [
-    {
-      "type": "Microsoft.Storage/storageAccounts",
-      "name": "[variables('storageAccountName')]",
-      "apiVersion": "2015-06-15",
-      "location": "[parameters('location')]",
-      "properties": {
-        "accountType": "[variables('storageAccountType')]"
-      }
-    },
     {
       "apiVersion": "2015-06-15",
       "type": "Microsoft.Network/publicIPAddresses",
@@ -169,10 +157,9 @@
     {
       "apiVersion": "2017-03-30",
       "type": "Microsoft.Compute/virtualMachines",
-      "name": "[parameters('vmName')]",
+      "name": "[concat(parameters('vmName'), '-master')]",
       "location": "[parameters('location')]",
       "dependsOn": [
-        "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
         "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
       ],
       "properties": {
@@ -180,7 +167,7 @@
           "vmSize": "[variables('vmSize')]"
         },
         "osProfile": {
-          "computerName": "[parameters('vmName')]",
+          "computerName": "master",
           "adminUsername": "[parameters('adminUsername')]",
           "adminPassword": "[parameters('adminPasswordOrKey')]",
           "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
@@ -189,28 +176,14 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "7.2",
+            "sku": "8.2",
             "version": "latest"
           },
           "osDisk": {
             "name": "[concat(parameters('vmName'),'_OSDisk')]",
             "caching": "ReadWrite",
             "createOption": "FromImage"
-          },
-          "dataDisks": [
-            {
-              "name": "[concat(parameters('vmName'),'_DataDisk1')]",
-              "diskSizeGB": "100",
-              "lun": 0,
-              "createOption": "Empty"
-            },
-            {
-              "name": "[concat(parameters('vmName'),'_DataDisk2')]",
-              "diskSizeGB": "100",
-              "lun": 1,
-              "createOption": "Empty"
-            }
-          ]
+          }
         },
         "networkProfile": {
           "networkInterfaces": [
@@ -218,12 +191,6 @@
               "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName'))]"
             }
           ]
-        },
-        "diagnosticsProfile": {
-          "bootDiagnostics": {
-            "enabled": true,
-            "storageUri": "[reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), '2015-06-15').primaryEndpoints.blob]"
-          }
         }
       }
     }
