@@ -3,37 +3,37 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "spClientId": {
-      "value": "GEN-AZUREAD-AKS-APPID"
+      "value": "da8352fd-60a5-4bc4-a293-35d9672bff3f"
     },
     "spClientSecret": {
-      "value": "GEN-AZUREAD-AKS-APPID-SECRET"
+      "value": "YqhF34z.R3T_OqEfCWvjSZ_6g3xaMv_Dj_"
     },
     "linuxAdminUsername": {
-      "value": "GEN-UNIQUE"
+      "value": "chenkiegcp2"
     },
     "linuxAdminPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "Woai@Chen41"
     },
     "linuxSSHPublicKey": {
-      "value": "GEN-SSH-PUB-KEY"
+      "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBGiIhMUKOk+8h0kiQdPNNJGkkYstelgzJsAu5BV7wL41bOCvNYTXDYmeg/HP67d4xdxb4D6bQEBOD98C30zGN3cPeke0XuLrQw/Um44R6L1ewKwHszGrswX9/VxXxWkHTe1QoZLkQWseAJak0SzPhVG7tHpUJ6Z38K2ThSVS6F4/kECMjc7YrOw+64bIpBcWMzA38LMz180eorRDyfco+uIYcrK6NSwzAXl+ouRvqogin1dMeL4uIZ1zHXmm8jViazr24GRo/zh5EFrWWYtodkf4zHiGeuSPiX3+EOnoajq+6bCZf6Kp2Sqob8kcu55GrPquJbzHlDJ7kOKNx8ttT"
     },
     "cosmosDbName": {
-      "value": "GEN-UNIQUE"
+      "value": "woai41GENfUNIQUE"
     },
     "acrName": {
-      "value": "GEN-UNIQUE"
+      "value": "woai41"
     },
     "jenkinsDnsPrefix": {
-      "value": "GEN-UNIQUE"
+      "value": "woai41"
     },
     "grafanaDnsPrefix": {
-      "value": "GEN-UNIQUE"
+      "value": "woai41"
     },
     "kubernetesDnsPrefix": {
-      "value": "GEN-UNIQUE"
+      "value": "woai41"
     },
     "kubernetesClusterName": {
-      "value": "GEN-UNIQUE"
+      "value": "woai41"
     }
   }
 }
