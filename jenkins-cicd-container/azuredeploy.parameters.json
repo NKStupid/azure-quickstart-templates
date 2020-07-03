@@ -18,22 +18,22 @@
       "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBGiIhMUKOk+8h0kiQdPNNJGkkYstelgzJsAu5BV7wL41bOCvNYTXDYmeg/HP67d4xdxb4D6bQEBOD98C30zGN3cPeke0XuLrQw/Um44R6L1ewKwHszGrswX9/VxXxWkHTe1QoZLkQWseAJak0SzPhVG7tHpUJ6Z38K2ThSVS6F4/kECMjc7YrOw+64bIpBcWMzA38LMz180eorRDyfco+uIYcrK6NSwzAXl+ouRvqogin1dMeL4uIZ1zHXmm8jViazr24GRo/zh5EFrWWYtodkf4zHiGeuSPiX3+EOnoajq+6bCZf6Kp2Sqob8kcu55GrPquJbzHlDJ7kOKNx8ttT"
     },
     "cosmosDbName": {
-      "value": "woai41afjiejfeie"
+      "value": "woai41afjiejfeie2"
     },
     "acrName": {
       "value": "woai41"
     },
     "jenkinsDnsPrefix": {
-      "value": "woai41"
+      "value": "woai41chen"
     },
     "grafanaDnsPrefix": {
-      "value": "woai41"
+      "value": "woai41jian"
     },
     "kubernetesDnsPrefix": {
-      "value": "woai41"
+      "value": "woai41si"
     },
     "kubernetesClusterName": {
-      "value": "woai41"
+      "value": "woai41yi"
     }
   }
 }
